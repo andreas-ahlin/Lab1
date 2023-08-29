@@ -31,6 +31,7 @@ def read_file():
 
 def main():
     dramalist = read_file()
+    print('hej')
 
 
 main()
