@@ -1,5 +1,4 @@
 import csv
-import os
 
 
 class Drama:
@@ -66,8 +65,8 @@ def main():
     dramalist1 = read_file_to_list()
     drama1 = Drama(dramalist1[0])
     drama2 = Drama(dramalist1[1])
-    # print(drama1)
-    # print(drama2)
+    print(drama1)
+    print(drama2)
     print(drama1 < drama2)
     print(drama1.check_rating_8())
     print(drama1.check_year_2020())
