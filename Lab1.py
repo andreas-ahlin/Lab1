@@ -16,7 +16,7 @@ class Drama:
         self.network = drama[9]
 
     def __str__(self):
-        return 'Namn: ' + self.dramaName + '\n' + 'Rating: ' + str(self.rating) + '\n' + 'Actors: ' + self.actors + '\n' + 'viewshipRate :' + str(self.viewshipRate) + '\n' + 'Genre :' + self.genre + '\n' + 'Director: ' + self.director + '\n' + 'Writer : ' + self.writer + '\n' + 'Year :' + str(self.year) + '\n' + 'NoOfEpisodes :' + str(self.noOfEpisodes) + '\n' + 'Network : ' + self.network
+        return 'Namn: ' + self.dramaName + '\n' + 'Rating: ' + str(self.rating) + '\n' + 'Actors: ' + self.actors + '\n' + 'viewshipRate :' + str(self.viewshipRate) + '\n' + 'Genre :' + self.genre + '\n' + 'Director: ' + self.director + '\n' + 'Writer : ' + self.writer + '\n' + 'Year :' + str(self.year) + '\n' + 'NoOfEpisodes :' + str(self.noOfEpisodes) + '\n' + 'Network : ' + self.network + '\n'
 
     def __lt__(self, other):
         return self.rating < other.rating
@@ -34,7 +34,7 @@ class Drama:
             return False
 
 
-def read_file():
+def read_file_to_objects():
     listofdrama = []
     with open('kdrama.csv', newline='') as dramafile:
         csvfile = csv.reader(dramafile, delimiter=',')
@@ -68,10 +68,11 @@ def main():
     print(drama1)
     print(drama2)
     print(drama1 < drama2)
-    print(drama1.check_rating_8())
-    print(drama1.check_year_2020())
+    print(drama1.__lt__(drama2), '\n')
+    print(drama1.check_rating_8(), '\n')
+    print(drama1.check_year_2020(), '\n')
 
-    dramaobjectlist = read_file()
+    dramaobjectlist = read_file_to_objects()
     list2020 = search_new_drama(dramaobjectlist)
     for item in list2020:
         print(item.dramaName)
